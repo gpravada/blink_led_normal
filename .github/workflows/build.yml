@@ -39,12 +39,12 @@ jobs:
           ls -lah
           cp build/bootloader/bootloader.bin bootloader-${{ matrix.idf_ver }}.bin
           cp build/partition_table/partition-table.bin partition-table-${{ matrix.idf_ver }}.bin
-          cp build/rgb-led.bin rgb-led-${{ matrix.idf_ver }}.bin
+          cp build/blink_led_normal.bin blink_led_normal-${{ matrix.idf_ver }}.bin
 
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          name: rgb-led_${{ matrix.idf_target }}_${{ matrix.idf_ver }}
+          name: blink_led_normal_${{ matrix.idf_target }}_${{ matrix.idf_ver }}
           path: "*-${{ matrix.idf_ver }}.bin"
 
   release:
